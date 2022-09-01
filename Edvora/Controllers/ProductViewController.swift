@@ -38,7 +38,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = String(products[indexPath.row].product_id) + " " +   products[indexPath.row].name.capitalized + " |Price: $" + String(products[indexPath.row].selling_price)
+        cell.textLabel?.text = String(products[indexPath.row].product_id) + ". " +   products[indexPath.row].name.capitalized + " |Price: $" + String(products[indexPath.row].selling_price)
         cell.tag = products[indexPath.row].selling_price
         return cell
     }

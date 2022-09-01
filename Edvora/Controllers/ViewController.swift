@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
-    
+    // table view for user data
     @IBOutlet weak var tableView: UITableView!
     
     var users = [Users]()
@@ -38,14 +38,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = users[indexPath.row].name.capitalized
+        cell.textLabel?.text = String(users[indexPath.row].user_id) + ". " + users[indexPath.row].name.capitalized
         return cell
     }
-    
-    
-
-    
-    
     
     private func configureItems() {
         let button = UIButton(type: .system)
@@ -63,7 +58,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UITableV
     }
 
 }
-
+// photo picker 
 extension ViewController: UIImagePickerControllerDelegate {
     func presentPhotoActionSheet() {
         let actionSheet = UIAlertController(title: "Profile Photo", message: "How Would You like to select a picture", preferredStyle: .actionSheet)
